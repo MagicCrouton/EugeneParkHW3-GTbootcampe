@@ -1,23 +1,31 @@
 // window.alert('Welcome, I will help you generate a strong password for you \n We will now choose what to include in your password')
 
-// var passLength = window.prompt('please enter desired password length\n(any number between 8-128)')
+var passLength = window.prompt('please enter desired password length\n(any number between 8-128)')
 
-if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
-var i = false
-while (i=false) {
-  var passLength = window.prompt('oops please enter desired password length\n(any number between 8-128)')
-  if ((passLength > 8 && passLength < 128 && (!isNaN(passLength))) {
-    var i = true
-  }
-  else {
-    var i = false
-  }
-  // code block to be executed
+var lengthCheck = true
+
+if (passLength < 8 || passLength > 128) {
+  var lengthCheck = false;
+}else if (isNaN(passLength)) {
+  var lengthCheck = false
+} else if (Number.isInteger(passLength)) {
+  var lengthCheck = false
+} else {
+  var lengthCheck = true
 }
-}
-else {
-  var i = true
-}
+
+// int i = false
+// while (i=false) {
+//   var passLength = window.prompt('oops please enter desired password length\n(any number between 8-128)')
+//   if (passLength > 8 && passLength < 128 && !isNaN(passLength)) {
+//     var i = true
+//   }
+//   else {
+//     var i = false
+//   }
+// }
+
+// } else {}
 
 // var includeCapital = window.confirm('Should I include\n uppercase letters?')
 // var includeLower = window.confirm('Should I include\n lowercase letters?')
