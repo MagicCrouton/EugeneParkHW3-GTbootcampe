@@ -58,6 +58,15 @@ else specialCharacters = [];
 // combine special characters into a pool that can be chosen from
 var possibleChar = [...capLetter,...lowLetters,...numCharacters,...specialCharacters];
 
+var generatedPassword = []
+for (i=0; i < passLength; ++i) {
+  generatedPassword[i] = possibleChar[Math.round(Math.random()*possibleChar.length)];
+}
+
+// function generatePassword () {
+
+// }
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
