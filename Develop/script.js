@@ -58,16 +58,22 @@ else specialCharacters = [];
 // combine special characters into a pool that can be chosen from
 var possibleChar = [...capLetter,...lowLetters,...numCharacters,...specialCharacters];
 
-var generatedPassword = []
+function generatePassword() {
+var generatedPW = []
 for (i=0; i < passLength; ++i) {
-  generatedPassword[i] = possibleChar[Math.round(Math.random()*possibleChar.length)];
+  generatedPW[i] = possibleChar[Math.round(Math.random()*possibleChar.length)];
+}
+var passwordText = generatedPW.join('');
+return passwordText;
 }
 
-//this iterates lowLetters and checks to see if one of it's elements are in the generated password and adds them to single variable 
+// this iterates the password pools and checks to see if one of it's elements are in the generated password and adds them to single variable for each type
+// I'm checking only for a number greater than 0 in the next part.
+
+function checkPW (generatedPW) {
 var lowLetterValidate = 0
 for (i=0; i < lowLetters.length; ++i) {
-  // returns true or false if it's in then the if statement terminates the loop
-  var scan = generatedPassword.includes(lowLetters[i])
+  var scan = generatedPW.includes(lowLetters[i])
   if (scan) {
     var lowLetterValidate = lowLetterValidate + 1;
   }
@@ -76,11 +82,40 @@ for (i=0; i < lowLetters.length; ++i) {
   }
 }
 
+var capLetterValidate = 0
+for (i=0; i < capLetter.length; ++i) {
+  var scan = generatedPW.includes(capLetter[i])
+  if (scan) {
+    var capLetterValidate = capLetterValidate + 1;
+  }
+  else {
+    var capLetterValidate = capLetterValidate + 0;
+  }
+}
 
-// function generatePassword () {
+var numValidate = 0
+for (i=0; i < numCharacters.length; ++i) {
+  var scan = generatedPW.includes(numCharacters[i])
+  if (scan) {
+    var numValidate = numValidate + 1;
+  }
+  else {
+    var numValidate = numValidate + 0;
+  }
+}
 
-// }
-
+var specialCharValidate = 0
+for (i=0; i < specialCharacters.length; ++i) {
+  var scan = generatedPW.includes(specialCharacters[i])
+  if (scan) {
+    var specialCharValidate = specialCharValidate + 1;
+  }
+  else {
+    var specialCharValidate = specialCharValidate + 0;
+  }
+}
+}
+// var passwordText = generatedPW.join('')
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
