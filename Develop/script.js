@@ -49,7 +49,7 @@ else numCharacters = [];
 var includeSpecial = window.confirm('should I include\nspecial characters?')
 
 if (includeSpecial) {
-  var specialCharacters = (`!@#$%^&*()_+{}|:"<>?[]`);
+  var specialCharacters = (`!@#$%^&*()_+{}|:<>?[]`);
   var specialCharacters = specialCharacters.split('');
 }
 else specialCharacters = [];
@@ -62,6 +62,20 @@ var generatedPassword = []
 for (i=0; i < passLength; ++i) {
   generatedPassword[i] = possibleChar[Math.round(Math.random()*possibleChar.length)];
 }
+
+//this iterates lowLetters and checks to see if one of it's elements are in the generated password and adds them to single variable 
+var lowLetterValidate = 0
+for (i=0; i < lowLetters.length; ++i) {
+  // returns true or false if it's in then the if statement terminates the loop
+  var scan = generatedPassword.includes(lowLetters[i])
+  if (scan) {
+    var lowLetterValidate = lowLetterValidate + 1;
+  }
+  else {
+    var lowLetterValidate = lowLetterValidate + 0;
+  }
+}
+
 
 // function generatePassword () {
 
