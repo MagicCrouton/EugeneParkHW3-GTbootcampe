@@ -8,7 +8,7 @@ function generatePassword() {
 
 // while loop doesn't let the user put in number out of range
 while (passLength < 8 || passLength > 128 || isNaN(passLength))
-   var passLength = window.prompt('oops enter desired password length\n(any number between 8-128')
+   var passLength = window.prompt('oops, Please enter a whole number between 8 - 128')
 
   //tried to make this work with a for loop and it did not.
   // if (passLength < 8 || passLength > 128) {
@@ -188,7 +188,8 @@ function writePassword() {
   
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  
+  passwordText.sty
   passwordText.value = password;
 
 }
