@@ -5,18 +5,25 @@ function generatePassword() {
 
   window.alert('Welcome, I will help you generate a strong password for you \n We will now choose what to include in your password')
   var passLength = window.prompt('please enter desired password length\n(any number between 8-128')
-  // if (passLength<8 || passLength>128 || isNaN(passLength)){
-  //   var passLength = window.prompt('oops, please enter desired password length\n(any number between 8-128')
+
+// while loop doesn't let the user put in number out of range
+while (passLength < 8 || passLength > 128 || isNaN(passLength))
+   var passLength = window.prompt('oops enter desired password length\n(any number between 8-128')
+
+  //tried to make this work with a for loop and it did not.
+  // if (passLength < 8 || passLength > 128) {
   //   var passValidate = 0
   //   for (i=0; i=1; i = passValidate) {
-  //       if (passLength<8 || passLength>128 || isNaN(passLength)) {
-  //       var passLength = window.prompt('again, please enter desired password length\n(any number between 8-128')
-  //       }
-  //       else {
+  //     var passLength = window.prompt('oops please enter a number between 8-128');
+  //     if (passLength > 8 && passLength < 128) {
   //       var passValidate = 1;
   //       }
-  //   }
+  //     else {
+  //       var passValidate = 0;
+  //       }
+  //     }
   // }
+  // else {}
 
   var includeCapital = window.confirm('Should I include\n uppercase letters?');
       // capital letter check define

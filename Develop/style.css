@@ -30,7 +30,9 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* aligned the text to center */
 .card {
+  text-align: center;
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
   border-width: 1px;
